@@ -1,6 +1,6 @@
 ---
 # reference: https://suzuki-shunsuke.github.io/tfaction/docs/config/tfaction-root-yaml/
-plan_workflow_name: terraform-plan
+plan_workflow_name: terraform_plan
 
 draft_pr: true # default is false. If `draft_pr` is true, tfaction creates pull requests as draft
 base_working_directory: "terraform" # default is empty, which means the current directory
