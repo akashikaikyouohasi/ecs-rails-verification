@@ -1,0 +1,62 @@
+---
+name: Set up
+on:
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
+    secrets:
+      gh_app_id:
+        required: true
+      gh_app_private_key:
+        required: true
+    outputs:
+      targets:
+        description: targets
+        value: ${{jobs.setup.outputs.targets}}
+      modules:
+        description: targets
+        value: ${{jobs.setup.outputs.modules}}
+      merge_commit_sha:
+        description: targets
+        value: ${{jobs.setup.outputs.merge_commit_sha}}
+jobs:
+  setup:
+    timeout-minutes: 30
+    permissions:
+      contents: read # For checkout a private repository
+    runs-on: ubuntu-latest
+    outputs:
+      targets: ${{steps.list-targets.outputs.targets}}
+      modules: ${{steps.list-targets.outputs.modules}}
+      merge_commit_sha: ${{inputs.ref}}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{inputs.ref}}
+          persist-credentials: false
+
+      - id: generate_token
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
+        with:
+          app_id: ${{secrets.gh_app_id}}
+          private_key: ${{secrets.gh_app_private_key}}
+          # pull_requests:write - Post comments
+          permissions: >-
+            {
+              "pull_requests": "write"
+            }
+          repositories: >-
+            ["${{github.event.repository.name}}"]
+
+      - uses: aquaproj/aqua-installer@e2d0136abcf70b7a2f6f505720640750557c4b33 # v3.1.1
+        with:
+          aqua_version: v2.44.0
+        env:
+          AQUA_GITHUB_TOKEN: ${{steps.generate_token.outputs.token}}
+
+      - uses: suzuki-shunsuke/tfaction/list-targets@6f11c7a16f4763439fb3acb8205ea070c95634e1 # v1.15.4
+        id: list-targets
+        with:
+          github_token: ${{steps.generate_token.outputs.token}}
