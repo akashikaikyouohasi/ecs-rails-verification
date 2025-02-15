@@ -3,7 +3,7 @@
 plan_workflow_name: terraform_plan
 
 draft_pr: true # default is false. If `draft_pr` is true, tfaction creates pull requests as draft
-base_working_directory: "terraform" # default is empty, which means the current directory
+base_working_directory: "" # default is empty, which means the current directory
 working_directory_file: tfaction.yaml # default is "tfaction.yaml"
 
 label_prefixes:
@@ -30,7 +30,7 @@ aqua:
 terraform_command: terraform
 
 target_groups:
-  - working_directory: development/
+  - working_directory: terraform/development/
     target: development # working directoryを識別する一意の名前
     aws_region: ap-northeast-1
     terraform_plan_config:
