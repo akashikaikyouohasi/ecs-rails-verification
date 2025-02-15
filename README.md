@@ -39,3 +39,17 @@
 - CIをパスすることを必須にする。今回ならfmtやvalidate、planが該当
 - ブランチの自動削除(Automatically delete head branches Loading)
 
+## terraform
+### CI/CD
+[tfaction](https://suzuki-shunsuke.github.io/tfaction/docs/)を導入しています
+
+[セットアップはこちら参照](https://suzuki-shunsuke.github.io/tfaction/docs/config/setup)。
+
+[サンプルはこちら](https://github.com/suzuki-shunsuke/tfaction-example)。
+tfactionを利用したworkflowsもこちら参照。
+
+
+
+## メモ
+- aquaのChecksum作成
+    - `aqua update-checksum`(upc   Create or Update aqua-checksums.json) を実行する
