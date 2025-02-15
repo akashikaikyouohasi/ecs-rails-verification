@@ -1,5 +1,5 @@
 
-# TErraformの初期化
+# Terraformの初期化
 terraform {
   # terraformのバージョン指定
   required_version = ">=1.10.5"
