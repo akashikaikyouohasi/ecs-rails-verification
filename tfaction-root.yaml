@@ -3,8 +3,8 @@
 plan_workflow_name: terraform_plan
 
 draft_pr: true # default is false. If `draft_pr` is true, tfaction creates pull requests as draft
-base_working_directory: "" # default is empty, which means the current directory
-working_directory_file: tfaction.yaml # default is "tfaction.yaml"
+#base_working_directory: "" # default is empty, which means the current directory
+#working_directory_file: tfaction.yaml # default is "tfaction.yaml"
 
 label_prefixes:
   target: "target:" # default is "target:"
@@ -37,4 +37,3 @@ target_groups:
       aws_assume_role_arn: arn:aws:iam::206863353204:role/GitHubActions_Terraform_AWS_terraform_plan
     terraform_apply_config:
       aws_assume_role_arn: arn:aws:iam::206863353204:role/GitHubActions_Terraform_AWS_terraform_apply
-
