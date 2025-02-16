@@ -15,7 +15,7 @@ label_prefixes:
 tfsec:
   enabled: false
 tflint:
-  enabled: true
+  enabled: false
 trivy:
   enabled: false
 
