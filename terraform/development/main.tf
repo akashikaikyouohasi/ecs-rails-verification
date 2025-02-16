@@ -20,3 +20,7 @@ terraform {
     use_lockfile = true
   }
 }
+
+provider "aws" {
+  region = "ap-northeast-1"
+}
