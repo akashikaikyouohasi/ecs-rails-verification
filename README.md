@@ -52,6 +52,9 @@ tfactionを利用したworkflowsもこちら参照。
 
 リポジトリのsecretsに、`APP_ID`と`APP_PRIVATE_KEY`を登録してください！
 
+- `APP_ID`：作成したGitHub AppのID
+- `APP_PRIVATE_KEY`：GitHub AppでPrivate keysを作成してpemファイルの内容を設定
+
 
 ## メモ
 - aquaのChecksum作成
