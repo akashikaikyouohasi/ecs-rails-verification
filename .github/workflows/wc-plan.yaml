@@ -190,11 +190,11 @@ jobs:
 
       - name: debug TEST
         uses: suzuki-shunsuke/tfaction/js@main
-        id: target-config
+        id: target-config-debug
         with:
           action: get-target-config
       - name: DEBUG output
-        run: echo ${{steps.target-config.outputs}}
+        run: echo ${{steps.target-config-debug.outputs}}
           
       - name: Test
         uses: suzuki-shunsuke/tfaction/test@6f11c7a16f4763439fb3acb8205ea070c95634e1 # v1.15.4
