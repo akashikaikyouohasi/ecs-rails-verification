@@ -28,8 +28,8 @@ resource "aws_iam_role" "github_actions_terraform_plan_role" {
 }
 
 resource "aws_iam_role_policy" "github_oidc_policy" {
-  name   = "GitHubActions_Terraform_AWS_terraform_plan_policy"
-  role   = aws_iam_role.github_actions_terraform_plan_role.id
+  name = "GitHubActions_Terraform_AWS_terraform_plan_policy"
+  role = aws_iam_role.github_actions_terraform_plan_role.id
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -39,7 +39,7 @@ resource "aws_iam_role_policy" "github_oidc_policy" {
           "s3:GetObject",
           "s3:PutObject"
         ]
-        Effect   = "Allow"
+        Effect = "Allow"
         Resource = [
           "arn:aws:s3:::ecs-rails-verification",
           "arn:aws:s3:::ecs-rails-verification/*"
