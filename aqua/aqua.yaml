@@ -7,3 +7,4 @@ registries:
 packages:
   - import: imports/*.yaml
   - name: suzuki-shunsuke/tfaction-go@v0.2.3
+  - name: hashicorp/terraform@v1.10.5
