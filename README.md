@@ -43,17 +43,14 @@
 ### CI/CD
 [tfaction](https://suzuki-shunsuke.github.io/tfaction/docs/)を導入しています
 
-[セットアップはこちら参照](https://suzuki-shunsuke.github.io/tfaction/docs/config/setup)。
-
-[サンプルはこちら](https://github.com/suzuki-shunsuke/tfaction-example)。
-tfactionを利用したworkflowsもこちら参照。
-
-サンプルを利用する場合は、GitHub Appの追加が必要。[権限はこちら参照](https://suzuki-shunsuke.github.io/tfaction/docs/config/github-token)。
-
-リポジトリのsecretsに、`APP_ID`と`APP_PRIVATE_KEY`を登録してください！
-
-- `APP_ID`：作成したGitHub AppのID
-- `APP_PRIVATE_KEY`：GitHub AppでPrivate keysを作成してpemファイルの内容を設定
+#### 参考情報
+- [セットアップはこちら参照](https://suzuki-shunsuke.github.io/tfaction/docs/config/setup)。
+- [tfactionの設定やサンプルワークフローはこちら参照](https://github.com/suzuki-shunsuke/tfaction-example)。
+    - 基本的には、サンプルのワークフローをそのまま利用しています。
+- 上記のサンプルを利用する場合は、GitHub Appの追加が必要。[権限はこちら参照](https://suzuki-shunsuke.github.io/tfaction/docs/config/github-token)。
+    - リポジトリのsecretsに、`APP_ID`と`APP_PRIVATE_KEY`を登録してください！
+        - `APP_ID`：作成したGitHub AppのID
+        - `APP_PRIVATE_KEY`：GitHub AppでPrivate keysを作成してpemファイルの内容を設定
 
 
 ## メモ
@@ -61,3 +58,5 @@ tfactionを利用したworkflowsもこちら参照。
     - `aqua update-checksum`(upc   Create or Update aqua-checksums.json) を実行する
 - aquaのリポジトリはこちら
     - https://github.com/aquaproj/aqua-registry/tree/main/pkgs
+- [Renovateの設定方法はこちら参考](https://qiita.com/ksh-fthr/items/40732b6396f36c62bea2)
+    - https://developer.mend.io/github/akashikaikyouohasi

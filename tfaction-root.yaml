@@ -9,7 +9,9 @@ label_prefixes:
   tfmigrate: "tfmigrate:" # default is "tfmigrate:"
   skip: "skip:" # default is "skip:"
 
-
+# renovateで利用するラベル
+renovate_terraform_labels:
+- terraform
 
 # https://github.com/suzuki-shunsuke/tfaction/pull/1106
 tfsec:
