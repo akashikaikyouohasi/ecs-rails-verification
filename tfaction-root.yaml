@@ -1,40 +1,32 @@
 ---
 # reference: https://suzuki-shunsuke.github.io/tfaction/docs/config/tfaction-root-yaml/
-plan_workflow_name: terraform-plan
+plan_workflow_name: terraform_plan
 
-draft_pr: true # default is false. If `draft_pr` is true, tfaction creates pull requests as draft
-base_working_directory: "terraform" # default is empty, which means the current directory
-working_directory_file: tfaction.yaml # default is "tfaction.yaml"
+draft_pr: true 
 
 label_prefixes:
   target: "target:" # default is "target:"
   tfmigrate: "tfmigrate:" # default is "tfmigrate:"
   skip: "skip:" # default is "skip:"
 
-aqua:
-  update_checksum:
-    # Update aqua-checksums.json in `setup` action
-    enabled: true # default is false
-    skip_push: false # default is false
-    prune: true # default is false
+
 
 # https://github.com/suzuki-shunsuke/tfaction/pull/1106
-# tfsec:
-#   enabled: true
-# tflint:
-#   enabled: true
-#   fix: true # tfaction >= v1.13.0
-# trivy:
-#   enabled: false
+tfsec:
+  enabled: false
+tflint:
+  enabled: false
+trivy:
+  enabled: false
 
 terraform_command: terraform
 
 target_groups:
-- working_directory: terrafrom/
-  target: development/
-  aws_region: ap-northeast-1
-  terraform_plan_config:
-    aws_assume_role_arn: arn:aws:iam::206863353204:role/GitHubActions_Terraform_AWS_terraform_plan
-  terraform_apply_config:
-    aws_assume_role_arn: arn:aws:iam::206863353204:role/GitHubActions_Terraform_AWS_terraform_apply
-
+  - working_directory: terraform/
+    target: development
+    aws_region: ap-northeast-1
+    terraform_plan_config:
+      aws_assume_role_arn: arn:aws:iam::206863353204:role/GitHubActions_Terraform_AWS_terraform_plan
+    terraform_apply_config:
+      aws_assume_role_arn: arn:aws:iam::206863353204:role/GitHubActions_Terraform_AWS_terraform_apply
+      

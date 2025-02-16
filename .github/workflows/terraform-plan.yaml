@@ -1,6 +1,6 @@
 ---
 name: terraform_plan
-on: pull_request_target
+on: pull_request
 
 concurrency:
   group: ${{ github.workflow }}--${{ github.head_ref }} # github.ref is unavailable in case of pull_request_target
@@ -105,7 +105,7 @@ jobs:
       gh_app_id: ${{secrets.APP_ID}}
       gh_app_private_key: ${{secrets.APP_PRIVATE_KEY}}
       terraform_private_module_ssh_key: ${{secrets.TERRAFORM_PRIVATE_MODULE_SSH_KEY}}
-      TFE_TOKEN: ${{secrets.TFE_TOKEN}}
+      #TFE_TOKEN: ${{secrets.TFE_TOKEN}}
 
   update-aqua-checksums:
     uses: ./.github/workflows/wc-update-aqua-checksums.yaml

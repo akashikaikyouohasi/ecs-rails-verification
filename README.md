@@ -48,8 +48,16 @@
 [サンプルはこちら](https://github.com/suzuki-shunsuke/tfaction-example)。
 tfactionを利用したworkflowsもこちら参照。
 
+サンプルを利用する場合は、GitHub Appの追加が必要。[権限はこちら参照](https://suzuki-shunsuke.github.io/tfaction/docs/config/github-token)。
+
+リポジトリのsecretsに、`APP_ID`と`APP_PRIVATE_KEY`を登録してください！
+
+- `APP_ID`：作成したGitHub AppのID
+- `APP_PRIVATE_KEY`：GitHub AppでPrivate keysを作成してpemファイルの内容を設定
 
 
 ## メモ
 - aquaのChecksum作成
     - `aqua update-checksum`(upc   Create or Update aqua-checksums.json) を実行する
+- aquaのリポジトリはこちら
+    - https://github.com/aquaproj/aqua-registry/tree/main/pkgs

@@ -14,9 +14,13 @@ terraform {
 
   # tfstate(状態管理用ファイル)をS3に保存する設定
   backend "s3" {
-    bucket         = "ecs-rails-verification"
-    key            = "terraform/ecs-rails-verification.tfstate"
-    region         = "ap-northeast-1"
+    bucket       = "ecs-rails-verification"
+    key          = "terraform/ecs-rails-verification.tfstate"
+    region       = "ap-northeast-1"
     use_lockfile = true
   }
+}
+
+provider "aws" {
+  region = "ap-northeast-1"
 }
