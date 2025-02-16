@@ -2,9 +2,7 @@
 # reference: https://suzuki-shunsuke.github.io/tfaction/docs/config/tfaction-root-yaml/
 plan_workflow_name: terraform_plan
 
-draft_pr: true # default is false. If `draft_pr` is true, tfaction creates pull requests as draft
-#base_working_directory: "" # default is empty, which means the current directory
-#working_directory_file: tfaction.yaml # default is "tfaction.yaml"
+draft_pr: true 
 
 label_prefixes:
   target: "target:" # default is "target:"
@@ -14,13 +12,6 @@ label_prefixes:
 
 
 # https://github.com/suzuki-shunsuke/tfaction/pull/1106
-# tfsec:
-#   enabled: true
-# tflint:
-#   enabled: true
-#   fix: true # tfaction >= v1.13.0
-# trivy:
-#   enabled: false
 
 terraform_command: terraform
 
