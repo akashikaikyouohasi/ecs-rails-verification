@@ -12,6 +12,12 @@ label_prefixes:
 
 
 # https://github.com/suzuki-shunsuke/tfaction/pull/1106
+tfsec:
+  enabled: false
+tflint:
+  enabled: true
+trivy:
+  enabled: false
 
 terraform_command: terraform
 
