@@ -59,3 +59,5 @@ tfactionを利用したworkflowsもこちら参照。
 ## メモ
 - aquaのChecksum作成
     - `aqua update-checksum`(upc   Create or Update aqua-checksums.json) を実行する
+- aquaのリポジトリはこちら
+    - https://github.com/aquaproj/aqua-registry/tree/main/pkgs
