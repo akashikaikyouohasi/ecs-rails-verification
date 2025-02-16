@@ -49,6 +49,25 @@ resource "aws_iam_role_policy" "github_oidc_policy" {
   })
 }
 
+resource "aws_iam_role_policy" "delete_lock_filepolicy" {
+  name = "GitHubActions_Terraform_AWS_terraform_plan_delete_lock_file_policy"
+  role = aws_iam_role.github_actions_terraform_plan_role.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:DeleteObject"
+        ]
+        Effect = "Allow"
+        Resource = [
+          "arn:aws:s3:::ecs-rails-verification/*.tfstate.tflock"
+        ]
+      }
+    ]
+  })
+}
+
 # ReadOnly policyをroleにアタッチ
 resource "aws_iam_role_policy_attachment" "github_actions_terraform_plan_policy_attachment" {
   role       = aws_iam_role.github_actions_terraform_plan_role.name
