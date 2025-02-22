@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## memo
+testページの追加：`rails generate controller Pages test`
