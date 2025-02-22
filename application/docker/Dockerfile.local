@@ -1,0 +1,19 @@
+ARG VARIANT=3.4.1-bullseye
+FROM ruby:${VARIANT}
+
+ENV HOME="/app"
+ENV LANG=C.UTF-8
+ENV TZ=Asia/Tokyo
+
+WORKDIR $HOME
+
+RUN apt-get update
+
+COPY Gemfile $HOME
+COPY Gemfile.lock $HOME
+
+RUN bundle install
+
+COPY . $HOME
+EXPOSE 3000
+CMD ["rails", "server", "-b", "0.0.0.0"]

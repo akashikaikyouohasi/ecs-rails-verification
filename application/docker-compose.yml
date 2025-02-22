@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:17.4
+    environment:
+      - TZ=Asia/Tokyo
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    image: web
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.local
+    volumes:
+      - .:/app
+    ports:
+      - 3001:3000
+    depends_on:
+      - db
+
