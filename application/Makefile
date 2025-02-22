@@ -29,6 +29,10 @@ stop:
 restart:
 	docker-compose restart
 
+# コンテナに入る
+exec-%:
+	docker-compose exec $* /bin/bash
+
 # コンテナのログを表示
 logs:
 	docker-compose logs -f
