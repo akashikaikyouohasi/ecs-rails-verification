@@ -14,28 +14,44 @@
   branchConcurrentLimit: 20,
   packageRules: [
     {
-      "matchManagers": ["terraform", "terraform-version"],
-      "addLabels": ["terraform"]
+      matchManagers: [
+        'terraform',
+        'terraform-version',
+      ],
+      addLabels: [
+        'terraform',
+      ],
     },
     {
-      "matchPackageNames": ["hashicorp/terraform"],
-      "addLabels": ["terraform"]
+      matchPackageNames: [
+        'hashicorp/terraform',
+      ],
+      addLabels: [
+        'terraform',
+      ],
     },
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true,
-      "automergeType": "pr"
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+        'pin',
+        'digest',
+      ],
+      automerge: true,
+      automergeType: 'pr',
     },
     {
-      "matchUpdateTypes": ["major"],
-      "automerge": false
+      matchUpdateTypes: [
+        'major',
+      ],
+      automerge: false,
     },
     {
       additionalBranchPrefix: '{{packageFileDir}}-',
       commitMessageSuffix: '({{packageFileDir}})',
-      matchPackagePatterns: [
-        '.*',
+      matchPackageNames: [
+        '/.*/',
       ],
-    }
+    },
   ],
 }
